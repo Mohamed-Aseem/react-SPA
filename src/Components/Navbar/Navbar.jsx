@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import './Navbar.css'
 import logo from '../../assets/logo.png'
 
@@ -16,12 +17,12 @@ const Navbar = () => {
     <nav className={`container ${sticky ? 'dark_nav': ''}`}>
         <img src={logo} alt="" className='logo'/>
         <ul>
-            <li>Home</li>
-            <li>Program</li>
-            <li>About</li>
-            <li>Campus</li>
-            <li>Testimonials</li>
-            <li><button className='btn'>Contact</button></li>
+            <li><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link></li>
+            <li><Link to='programs' smooth={true} offset={-230} duration={500}>Program</Link></li>
+            <li><Link to='about' smooth={true} offset={-140} duration={500}>About</Link></li>
+            <li><Link to='galleries' smooth={true} offset={-210} duration={500}>Campus</Link></li>
+            <li><Link to='testimonials' smooth={true} offset={-220} duration={500}>Testimonials</Link></li>
+            <li><Link to='contact' smooth={true} offset={-220} duration={500} className='btn'>Contact</Link></li>
         </ul>
     </nav>
   )
