@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Contact.css'
 import msg_icon from '../../assets/msg-icon.png'
 import mail_icon from '../../assets/mail-icon.png'
 import phone_icon from '../../assets/phone-icon.png'
 import location_icon from '../../assets/location-icon.png'
 import white_arrow from '../../assets/white-arrow.png'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Contact = () => {
 
+    useEffect(()=>{
+      Aos.init({duration: 1500})
+    },[])
+    
     const [result, setResult] = React.useState("");
 
     const onSubmit = async (event) => {
@@ -36,7 +42,7 @@ const Contact = () => {
 
   return (
     <div className='contact'>
-      <div className="contact-col">
+      <div className="contact-col" data-aos='fade-right' data-aos-offset='-200' data-aos-duration='1500'>
         <h3>Send us a message <img src={msg_icon} alt="" /></h3>
         <p>
         We're here to help! Whether you have questions about our programs, admissions process, or campus life, we're eager to assist you. 
@@ -49,7 +55,7 @@ const Contact = () => {
             <li><img src={location_icon} alt="" />94, Masthar Road, Karuwattukkal-03, Sammanthurai</li>
         </ul>
       </div>
-      <div className="contact-col">
+      <div className="contact-col" data-aos='fade-left' data-aos-offset='-200' data-aos-duration='1500'>
         <form onSubmit={onSubmit}>
             <label>Your Name</label>
             <input type="text" name='name' placeholder='Enter Your Name' required/>
