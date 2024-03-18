@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useEffect }from 'react'
 import './About.css'
 import about_img from '../../assets/about.png'
 import play_icon from '../../assets/play-icon.png'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const About = ({setPlayState}) => {
+
+  useEffect(()=>{
+    Aos.init({duration: 2000})
+  },[])
+
   return (
     <div className='about'>
-      <div className="about-left">
+      <div className="about-left" data-aos='fade-right' data-aos-duration='2000'>
         <img src={about_img} alt="" className='about-img'/>
         <img src={play_icon} alt="" className='play-icon' onClick={()=>{
           setPlayState(true)}}/>
       </div>
-      <div className="about-right">
+      <div className="about-right" data-aos='fade-left' data-aos-duration='3000'>
         <h3>ABOUT UNIVERSITY</h3>
         <h2>Nurturing Tommorow's Leaders Today</h2>
         <p>
